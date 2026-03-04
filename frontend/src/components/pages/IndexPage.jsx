@@ -1,19 +1,19 @@
 import VotingList from "../VotingList";
 import TotalVotes from "../TotalVotes";
+import ApartmentListingsList from "../ApartmentListingsList";
+
 
 
 function IndexPage() {
   console.log("Index Page loaded");
 
-  fetch("/api/listings")
-    .then((res) => res.json())
-    .then((data) => console.log("Listings data:", data));
-
   return (
     <>
       <h1>Index Page Deee</h1>
       <section>
-        <p>This is the main index page content.</p>
+        <ApartmentListingsList />
+
+
       </section>
       <section>
         <h2>Voting</h2>
