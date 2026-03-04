@@ -1,3 +1,7 @@
+import VotingList from "../VotingList";
+import TotalVotes from "../TotalVotes";
+
+
 function IndexPage() {
   console.log("Index Page loaded");
 
@@ -10,12 +14,11 @@ function IndexPage() {
       <h1>Index Page Deee</h1>
       <section>
         <p>This is the main index page content.</p>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis,
-          eius culpa eos ipsa tenetur totam? Voluptas, ullam? Quis molestias
-          corrupti nemo, id laboriosam ullam! Eaque praesentium libero eos
-          distinctio sit?
-        </div>
+      </section>
+      <section>
+        <h2>Voting</h2>
+        {/* <TotalVotes totalVotes={0}/> */}
+        <VotingList/>
       </section>
     </>
   );
