@@ -1,8 +1,13 @@
 import { StrictMode, Component } from "react";
 import { createRoot } from "react-dom/client";
+
+import { BrowserRouter,Routes,Route } from "react-router";
 import "./index.css";
-import IndexPage from "./components/pages/IndexPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import IndexPage from "./pages/IndexPage";
+import AboutPage from "./pages/AboutPage";
+import BaseTemplate from "./pages/BaseTemplate";
 
 // import App from './App.jsx'
 
@@ -30,6 +35,17 @@ const root = createRoot(container);
 
 root.render(
   <StrictMode>
-    <IndexPage />
+    <BaseTemplate>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<IndexPage />} />
+        <Route path="/about" element={<AboutPage />} />
+              {/* <IndexPage />
+      <AboutPage /> */}
+      </Routes>
+
+    </BrowserRouter>
+    </BaseTemplate>
   </StrictMode>,
 );

@@ -1,12 +1,14 @@
-import { useState, useEffect ,useCallback} from "react";
-
-import VotingList from "../VotingList";
-import ApartmentListingsList from "../ApartmentListingsList";
-import CreateListingForm from "../CreateListingForm";
+import { useState, useEffect, useCallback } from "react";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
+import NavigationBar from "../components/NavigationBar";
+import VotingList from "../components/VotingList";
+import ApartmentListingsList from "../components/ApartmentListingsList";
+import CreateListingForm from "../components/CreateListingForm";
+import BaseTemplate from "./BaseTemplate";
 
 function IndexPage() {
   console.log("Index Page loaded");
@@ -25,7 +27,7 @@ function IndexPage() {
   }, [query]);
 
   useEffect(() => {
-    const timeout = setTimeout(reloadListings,300); // debounce by 500ms
+    const timeout = setTimeout(reloadListings, 300); // debounce by 500ms
 
     // Cleanup function to clear the timeout if the component unmounts or query changes
     return () => {
@@ -38,7 +40,9 @@ function IndexPage() {
 
   return (
     <>
-      <Container>
+      {/* <Container>
+        <NavigationBar /> */}
+    
         <h1>Index Page Deee</h1>
         <section>
           <Row>
@@ -58,7 +62,7 @@ function IndexPage() {
           <h2>Voting</h2>
           <VotingList />
         </section>
-      </Container>
+      {/* </Container> */}
     </>
   );
 }
