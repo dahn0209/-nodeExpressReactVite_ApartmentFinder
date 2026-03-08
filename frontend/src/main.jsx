@@ -8,6 +8,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import IndexPage from "./pages/IndexPage";
 import AboutPage from "./pages/AboutPage";
 import BaseTemplate from "./pages/BaseTemplate";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 // import App from './App.jsx'
 
@@ -43,6 +45,8 @@ root.render(
         <Route path="/about" element={<AboutPage />} />
               {/* <IndexPage />
       <AboutPage /> */}
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
       </Routes>
 
     </BrowserRouter>
