@@ -1,4 +1,4 @@
-export default function Listing({ title, price }) {
+export default function Listing({id, title, price }) {
   return (
     <div>
       <h3>{title}</h3>

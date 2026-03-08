@@ -9,9 +9,11 @@ import VotingList from "../components/VotingList";
 import ApartmentListingsList from "../components/ApartmentListingsList";
 import CreateListingForm from "../components/CreateListingForm";
 import BaseTemplate from "./BaseTemplate";
+import { useUser } from "../context/UserContext";
 
 function IndexPage() {
   console.log("Index Page loaded");
+  const user = useUser();
   const [listings, setListings] = useState([]);
   const [query, setQuery] = useState("");
 
@@ -42,26 +44,30 @@ function IndexPage() {
     <>
       {/* <Container>
         <NavigationBar /> */}
-    
-        <h1>Index Page Deee</h1>
-        <section>
-          <Row>
-            <Col md={8} xs={12}>
-              <ApartmentListingsList
-                listings={listings}
-                query={query}
-                setQuery={setQuery}
-              />
-            </Col>
-            <Col md={4} xs={12}>
+
+      <h1>Index Page Deee</h1>
+      <section>
+        <Row>
+          <Col md={8} xs={12}>
+            <ApartmentListingsList
+              listings={listings}
+              query={query}
+              setQuery={setQuery}
+            />
+          </Col>
+          <Col md={4} xs={12}>
+            {user ? (
               <CreateListingForm reloadListings={reloadListings} />
-            </Col>
-          </Row>
-        </section>
-        <section>
-          <h2>Voting</h2>
-          <VotingList />
-        </section>
+            ) : (
+              <p>Please <a href="/login">log in</a> to create a new listing</p>
+            )}
+          </Col>
+        </Row>
+      </section>
+      <section>
+        <h2>Voting</h2>
+        <VotingList />
+      </section>
       {/* </Container> */}
     </>
   );

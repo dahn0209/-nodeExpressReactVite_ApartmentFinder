@@ -1,19 +1,15 @@
-
-
-export default function Voter({ id,name,votes=0,setVotes }) {
-
-  function OnVote() {
+export default function Voter({ id, name, votes = 0, setVotes }) {
+  function onVote() {
     setVotes(id);
-    console.log(`Vote for:`, name, votes);
+    console.log("🗳️ Voted for ", name, votes);
   }
 
-  console.log(`Render voter:`, name);
-
+  console.log("👩🏼‍🎨 Render Voter ", name);
   return (
     <div>
-      Voter for <strong>{name}</strong>
-      # Votes{" "}<span id="numVotes"> ({votes}) </span>
-      <button onClick={OnVote}>thumbs up</button>
+      Vote for <strong>{name}</strong># Votes{" "}
+      <span id="numVotes">({votes})</span>
+      <button onClick={onVote}>🤙🏼</button>
     </div>
   );
 }
